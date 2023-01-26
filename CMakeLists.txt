@@ -11,11 +11,6 @@ enable_testing ()
 
 add_subdirectory ("googletest")
 
-# N.B. if not building need to find CMakeCache.txt in the build directory and replace:
-#     gtest_force_shared_crt:BOOL=OFF
-#   with
-#     gtest_force_shared_crt:BOOL=ON
-
 # Set include directories
 include_directories ("sorting")
 

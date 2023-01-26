@@ -65,7 +65,7 @@ void test_sorting_list_inplace(int* data, int N, void (*sorter)(int*, int))
 	int* orig_copy = new int[N];
 	std::copy(data, data + N, orig_copy);
 
-	// Perform insertion sort
+	// Perform sort
 
 	sorter(data, N);
 
@@ -76,5 +76,22 @@ void test_sorting_list_inplace(int* data, int N, void (*sorter)(int*, int))
 	// Check contents
 
 	check_contents(data, orig_copy, N);
+
+}
+
+void test_sorting_list_oncopy(int* data, int N, int* (*sorter)(int*, int))
+{
+
+	// Perform sort
+
+	int* sorted = sorter(data, N);
+
+	// Check order
+
+	check_ordering(sorted, N);
+
+	// Check contents
+
+	check_contents(sorted, data, N);
 
 }
