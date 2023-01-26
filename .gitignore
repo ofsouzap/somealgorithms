@@ -2,6 +2,8 @@
 
 # Output
 [Oo]ut/
+[Bb]uild/
+[Tt]esting/[Tt]emporary/
 
 # From https://github.com/github/gitignore/blob/main/C%2B%2B.gitignore
 
