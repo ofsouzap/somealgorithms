@@ -4,38 +4,13 @@
 
 using namespace sorting;
 
-TEST(InsertionSort, SingleElement)
-{
+constexpr inplace_sorting_function_t sort_function = insertion_sort;
+constexpr inplace_testing_function_t test_function = test_sorting_list_inplace;
+#define TEST_SUITE_NAME InsertionSort
 
-	const int N = 1;
-	int data[N] = { 2 };
-	test_sorting_list_inplace(data, N, insertion_sort);
+BASIC_SORTING_TEST(TEST_SUITE_NAME, SingleElement, 1, 1)
+BASIC_SORTING_TEST(TEST_SUITE_NAME, AlreadyOrdered, 5, 2 COMMA 6 COMMA 8 COMMA 10 COMMA 36)
+BASIC_SORTING_TEST(TEST_SUITE_NAME, Normal, 7, 7 COMMA 24 COMMA 6 COMMA 23 COMMA -3 COMMA 9 COMMA -23)
+BASIC_SORTING_TEST(TEST_SUITE_NAME, NormalDuplicates, 9, 2 COMMA 6 COMMA -8 COMMA 7 COMMA 36 COMMA -2 COMMA 2 COMMA -8 COMMA 7)
 
-}
-
-TEST(InsertionSort, AlreadyOrdered)
-{
-
-	const int N = 5;
-	int data[N] = { 2, 6, 8, 10, 36 };
-	test_sorting_list_inplace(data, N, insertion_sort);
-
-}
-
-TEST(InsertionSort, Normal)
-{
-
-	const int N = 7;
-	int data[N] = { 7, 24, 6, 23, -3, 9, -23 };
-	test_sorting_list_inplace(data, N, insertion_sort);
-
-}
-
-TEST(InsertionSort, NormalDuplicates)
-{
-
-	const int N = 9;
-	int data[N] = { 2, 6, -8, 7, 36, -2, 2, -8, 7 };
-	test_sorting_list_inplace(data, N, insertion_sort);
-
-}
+#undef TEST_SUITE_NAME

@@ -1,5 +1,18 @@
 #pragma once
 
+#define COMMA ,
+#define BASIC_SORTING_TEST(suite_name, test_name, value_count, xs_csv)\
+TEST(suite_name, test_name)\
+{\
+	const int N = value_count;\
+	int data[N] = { xs_csv };\
+	test_function(data, N, sort_function);\
+}
+
+typedef void (*inplace_sorting_function_t)(int*, int);
+typedef int* (*oncopy_sorting_function_t)(int*, int);
+typedef void (*inplace_testing_function_t)(int*, int, inplace_sorting_function_t);
+typedef void (*oncopy_testing_function_t)(int*, int, oncopy_sorting_function_t);
 
 void check_ordering(int* data, int N)
 {
