@@ -18,3 +18,10 @@ add_test (
 	NAME "test_merge_sort"
 	COMMAND "test_merge_sort"
 )
+
+add_executable ("test_heap_sort" "sorting_test_util.h" "test_heap_sort.cpp" )
+target_link_libraries ("test_heap_sort" "gtest_main" "sorting")
+add_test (
+	NAME "test_heap_sort"
+	COMMAND "test_heap_sort"
+)

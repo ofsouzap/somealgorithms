@@ -33,9 +33,7 @@ void sorting::select_sort(int* xs, int N)
 
 		// Swap the smallest element into xs[i]
 
-		int tmp = xs[i];
-		xs[i] = xs[min_j];
-		xs[min_j] = tmp;
+		array_swap(xs, i, min_j);
 
 	}
 

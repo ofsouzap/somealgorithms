@@ -1,1 +1,1 @@
-add_library ("sorting" "sorting.h" "insertion_sort.cpp" "select_sort.cpp" "merge_sort.cpp")
+add_library ("sorting" "sorting.h" "insertion_sort.cpp" "select_sort.cpp" "merge_sort.cpp" "heap_sort.cpp" "array_swap.cpp")

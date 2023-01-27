@@ -20,10 +20,7 @@ void sorting::insertion_sort(int* xs, int N)
 			if (xs[j] < xs[j-1])
 			{
 
-				// Do a swap
-				int tmp = xs[j];
-				xs[j] = xs[j-1];
-				xs[j-1] = tmp;
+				array_swap(xs, j, j - 1);
 
 			}
 
