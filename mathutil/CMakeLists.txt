@@ -1,0 +1,1 @@
+add_library("mathutil" "mathutil.h" "mathutil.cpp")

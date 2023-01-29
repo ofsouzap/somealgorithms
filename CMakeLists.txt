@@ -12,8 +12,10 @@ enable_testing ()
 add_subdirectory ("googletest")
 
 # Set include directories
+include_directories ("mathutil")
 include_directories ("sorting")
 
 # Include sub-directories
+add_subdirectory ("mathutil")
 add_subdirectory ("sorting")
 add_subdirectory ("tests")

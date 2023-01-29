@@ -7,4 +7,7 @@ add_library (
 	"heap_sort.cpp"
 	"array_swap.cpp"
 	"counting_sort.cpp"
+	"radix_sort.cpp"
 )
+
+target_link_libraries ("sorting" "mathutil")
