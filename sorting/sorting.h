@@ -1,5 +1,9 @@
 #pragma once
 
+#include <exception>
+
+using std::exception;
+
 namespace sorting
 {
 
@@ -13,5 +17,10 @@ namespace sorting
 
 	void heapify(int* xs, int start, int N);
 	void heap_sort(int* xs, int N);
+
+	constexpr int COUNTING_SORT_MAX_RANGE = 256;
+	class CountingSortRangeTooLargeException : public exception { };
+	class CountingSortValueOutOfRangeException : public exception { };
+	int* counting_sort(int* xs, int N, int min, int max);
 
 }

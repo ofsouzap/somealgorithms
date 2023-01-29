@@ -108,3 +108,16 @@ void test_sorting_list_oncopy(int* data, int N, int* (*sorter)(int*, int))
 	check_contents(sorted, data, N);
 
 }
+
+void check_sorted_data(int* orig, int* sorted, int N)
+{
+
+	// Check order
+
+	check_ordering(sorted, N);
+
+	// Check contents
+
+	check_contents(sorted, orig, N);
+
+}

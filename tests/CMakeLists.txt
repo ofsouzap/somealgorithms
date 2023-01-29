@@ -25,3 +25,10 @@ add_test (
 	NAME "test_heap_sort"
 	COMMAND "test_heap_sort"
 )
+
+add_executable ("test_counting_sort" "sorting_test_util.h" "test_counting_sort.cpp" )
+target_link_libraries ("test_counting_sort" "gtest_main" "sorting")
+add_test (
+	NAME "test_counting_sort"
+	COMMAND "test_counting_sort"
+)
