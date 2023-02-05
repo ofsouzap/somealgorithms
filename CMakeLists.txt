@@ -14,7 +14,9 @@ add_subdirectory ("googletest")
 # Set include directories
 include_directories ("mathutil")
 include_directories ("sorting")
+include_directories ("general_algorithms")
 
 # Include sub-directories
 add_subdirectory ("mathutil")
 add_subdirectory ("sorting")
+add_subdirectory ("general_algorithms")
