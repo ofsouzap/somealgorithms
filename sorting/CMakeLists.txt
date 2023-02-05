@@ -11,3 +11,5 @@ add_library (
 )
 
 target_link_libraries ("sorting" "mathutil")
+
+add_subdirectory ("tests")

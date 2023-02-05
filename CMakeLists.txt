@@ -18,4 +18,3 @@ include_directories ("sorting")
 # Include sub-directories
 add_subdirectory ("mathutil")
 add_subdirectory ("sorting")
-add_subdirectory ("tests")
