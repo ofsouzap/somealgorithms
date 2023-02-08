@@ -1,0 +1,8 @@
+add_library (
+	"data_structures"
+	"queue.h"
+)
+
+target_link_libraries ("data_structures" "mathutil")
+
+add_subdirectory ("tests")
