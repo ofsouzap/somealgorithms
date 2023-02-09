@@ -33,17 +33,17 @@ namespace data_structures
 
         }
 
-        bool is_empty()
+        bool is_empty() const
         {
             return top == 0;
         }
 
-        bool is_full()
+        bool is_full() const
         {
             return top == size;
         }
 
-        void push(T value)
+        void push(T value) const
         {
 
             if (is_full())
@@ -55,7 +55,7 @@ namespace data_structures
 
         }
 
-        T pop()
+        T pop() const
         {
 
             if (is_empty())

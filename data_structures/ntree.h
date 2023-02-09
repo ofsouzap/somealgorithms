@@ -35,17 +35,41 @@ namespace data_structures
 
         }
 
-        T get_value()
+        T get_value() const
         {
             return value;
         }
 
-        NTreeNode<N, T>* get_child(int n)
+        NTreeNode<N, T>* get_child(const int n) const
         {
             return children[n];
         }
 
-        void set_child(int n, NTreeNode<N, T>* child)
+        NTreeNode<N, T>* get_left() const
+        {
+
+            if (!child_index_in_range(0))
+            {
+                throw ChildIndexOutOfRangeException();
+            }
+
+            return children[0];
+
+        }
+
+        NTreeNode<N, T>* get_right() const
+        {
+
+            if (!child_index_in_range(N-1))
+            {
+                throw ChildIndexOutOfRangeException();
+            }
+
+            return children[N-1];
+
+        }
+
+        void set_child(const int n, NTreeNode<N, T>* child)
         {
 
             if (!child_index_in_range(n))
@@ -59,7 +83,7 @@ namespace data_structures
 
         }
 
-        bool is_leaf()
+        bool is_leaf() const
         {
 
             for (int i = 0; i < N; i++)
@@ -73,5 +97,8 @@ namespace data_structures
         }
 
     };
+
+    template <class T>
+    using BinaryTreeNode = NTreeNode<2, T>;
 
 }

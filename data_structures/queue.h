@@ -54,17 +54,17 @@ namespace data_structures
 			tail = 0;
 		}
 
-		bool is_empty()
+		bool is_empty() const
 		{
 			return head < 0;
 		}
 
-		bool is_full()
+		bool is_full() const
 		{
 			return head == tail;
 		}
 
-		int get_count()
+		int get_count() const
 		{
 			if (head < 0)
 				return 0;
@@ -74,7 +74,7 @@ namespace data_structures
 				return size - head + 1 + tail;
 		}
 
-		void enqueue(T value)
+		void enqueue(T value) const
 		{
 
 			if (is_full())
