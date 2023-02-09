@@ -18,7 +18,7 @@ namespace data_structures
         T value;
         NTreeNode<N, T>* children[N];
 
-        bool child_index_in_range(int n)
+        bool child_index_in_range(int n) const
         {
             return n >= 0 && n < N;
         }
@@ -31,6 +31,16 @@ namespace data_structures
             for (int i = 0; i < N; i++)
             {
                 children[i] = nullptr;
+            }
+
+        }
+
+        ~NTreeNode()
+        {
+
+            for (int i = 0; i < N; i++)
+            {
+                delete children[i];
             }
 
         }
