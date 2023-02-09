@@ -74,7 +74,7 @@ namespace data_structures
 				return size - head + 1 + tail;
 		}
 
-		void enqueue(T value) const
+		void enqueue(T value)
 		{
 
 			if (is_full())
