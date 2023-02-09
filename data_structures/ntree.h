@@ -79,7 +79,7 @@ namespace data_structures
 
         }
 
-        void set_child(const int n, NTreeNode<N, T>* const child)
+        void set_child(const int n, T child)
         {
 
             if (!child_index_in_range(n))
@@ -88,7 +88,7 @@ namespace data_structures
             }
             else
             {
-                children[n] = child;
+                children[n] = new NTreeNode<N, T>(child);
             }
 
         }
