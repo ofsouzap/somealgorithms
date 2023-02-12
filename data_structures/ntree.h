@@ -50,12 +50,12 @@ namespace data_structures
             return value;
         }
 
-        NTreeNode<N, T>* get_child(const int n) const
+        NTreeNode<N, T>* const get_child(const int n) const
         {
             return children[n];
         }
 
-        NTreeNode<N, T>* get_left() const
+        NTreeNode<N, T>* const get_left() const
         {
 
             if (!child_index_in_range(0))
@@ -67,7 +67,7 @@ namespace data_structures
 
         }
 
-        NTreeNode<N, T>* get_right() const
+        NTreeNode<N, T>* const get_right() const
         {
 
             if (!child_index_in_range(N-1))
@@ -90,6 +90,30 @@ namespace data_structures
             {
                 children[n] = new NTreeNode<N, T>(child);
             }
+
+        }
+
+        void set_left(T child)
+        {
+
+            if (!child_index_in_range(0))
+            {
+                throw ChildIndexOutOfRangeException();
+            }
+
+            set_child(0, child);
+
+        }
+
+        void set_right(T child)
+        {
+
+            if (!child_index_in_range(N-1))
+            {
+                throw ChildIndexOutOfRangeException();
+            }
+
+            set_child(N-1, child);
 
         }
 
