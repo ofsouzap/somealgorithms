@@ -18,3 +18,10 @@ add_test (
  	NAME "test_ntree"
  	COMMAND "test_ntree"
 )
+
+add_executable ("test_tree_set" "test_tree_set.cpp" )
+target_link_libraries ("test_tree_set" "gtest_main" "data_structures")
+add_test (
+ 	NAME "test_tree_set"
+ 	COMMAND "test_tree_set"
+)
