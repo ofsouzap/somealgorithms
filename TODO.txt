@@ -1,0 +1,6 @@
+- TreeMap (binary search tree implementation of dictionary data structure)
+- deletions from:
+	- BasicListMap
+	- ListMap
+	- TreeMap
+- red-black trees
