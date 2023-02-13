@@ -1,5 +1,6 @@
 add_library (
 	"data_structures"
+	"exceptions.h"
 	"queue.h"
 	"stack.h"
 	"ntree.h"

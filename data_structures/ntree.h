@@ -1,13 +1,9 @@
 #pragma once
 
-#include <exception>
-
-using std::exception;
+#include "exceptions.h"
 
 namespace data_structures
 {
-
-    class ChildIndexOutOfRangeException : public exception { };
 
     template <int N, class T>
     class NTreeNode

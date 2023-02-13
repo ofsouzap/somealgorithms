@@ -1,9 +1,7 @@
 #pragma once
 
-#include <exception>
+#include "exceptions.h"
 #include "ntree.h"
-
-using std::exception;
 
 namespace data_structures
 {
@@ -15,7 +13,6 @@ namespace data_structures
     public:
         typedef bool (*equater_t)(const T a, const T b);
         typedef bool (*orderer_t)(const T a, const T b);
-        class InsertingIntoNullNodeException : public exception { };
 
     private:
 

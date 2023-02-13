@@ -1,14 +1,9 @@
 #pragma once
 
-#include <exception>
-
-using std::exception;
+#include "exceptions.h"
 
 namespace data_structures
 {
-
-	class QueueEmptyException : public exception { };
-	class QueueFullException : public exception { };
 
 	template <class T>
 	/// <summary>

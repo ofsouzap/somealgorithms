@@ -1,14 +1,9 @@
 #pragma once
 
-#include <exception>
-
-using std::exception;
+#include "exceptions.h"
 
 namespace data_structures
 {
-
-    class StackEmptyException : public exception { };
-    class StackFullException : public exception { };
 
     template <class T>
     class Stack
