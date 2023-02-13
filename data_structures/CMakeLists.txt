@@ -5,6 +5,7 @@ add_library (
 	"stack.h"
 	"ntree.h"
 	"tree_set.h"
+	"basic_list_map.h"
 )
 
 target_link_libraries ("data_structures" "mathutil")

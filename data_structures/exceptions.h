@@ -17,5 +17,7 @@ namespace data_structures
 
 	class InsertingIntoNullNodeException : public exception { };
 
+	class KeyDoesntExistException : public exception { };
+
 }
 
