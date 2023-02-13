@@ -35,7 +35,7 @@ namespace data_structures
 			}
 		}
 
-		V_t get(K_t key)
+		V_t get(K_t key) const
 		{
 
 			Node* curr = start;
