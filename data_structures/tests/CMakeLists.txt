@@ -39,3 +39,10 @@ add_test (
  	NAME "test_list_map"
  	COMMAND "test_list_map"
 )
+
+add_executable ("test_tree_map" "test_tree_map.cpp" )
+target_link_libraries ("test_tree_map" "gtest_main" "data_structures")
+add_test (
+ 	NAME "test_tree_map"
+ 	COMMAND "test_tree_map"
+)
