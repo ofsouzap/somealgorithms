@@ -83,7 +83,7 @@ namespace data_structures
 
 		}
 
-		Node* succ(const Node* const node) const
+		Node* child_succ(const Node* const node) const
 		{
 
 			if (node->right == nullptr)
@@ -196,7 +196,7 @@ namespace data_structures
 		{
 
 			Node* node = get_node(key);
-			Node* n_succ = succ(node);
+			Node* n_succ = child_succ(node);
 
 			if (node->is_leaf())
 			{
