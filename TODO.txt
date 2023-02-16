@@ -1,5 +1,4 @@
 - red-black trees
-- hash table dictionary
 - priority queues:
 	- heap implementation
 	- binomial heap implementation
