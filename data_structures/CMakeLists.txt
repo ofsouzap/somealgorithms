@@ -7,6 +7,7 @@ add_library (
 	"tree_set.h"
 	"basic_list_map.h"
 	"list_map.h"
+	"tree_map.h"
 )
 
 target_link_libraries ("data_structures" "mathutil")
