@@ -3,8 +3,6 @@ add_library (
 	"exceptions.h"
 	"queue.h"
 	"stack.h"
-	"ntree.h"
-	"tree_set.h"
 	"basic_list_map.h"
 	"list_map.h"
 	"tree_map.h"
