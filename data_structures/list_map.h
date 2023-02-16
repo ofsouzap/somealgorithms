@@ -2,6 +2,9 @@
 
 #include "exceptions.h"
 
+// Below is just for fun
+#define until(cond) while (!(cond))
+
 namespace data_structures
 {
 
@@ -71,6 +74,46 @@ namespace data_structures
 			}
 
 			throw KeyDoesntExistException();
+
+		}
+
+		void remove(K_t key)
+		{
+
+			if (start->key == key)
+			{
+				start = start->next; // Even if start->next is nullptr this is fine
+			}
+			else
+			{
+
+				Node* prev = start;
+				Node* curr = start->next;
+				
+				until (curr == nullptr || curr->key == key)
+				{
+					prev = curr;
+					curr = curr->next;
+				}
+
+				if (curr == nullptr)
+				{
+					throw KeyDoesntExistException();
+				}
+				else
+				{
+
+					// curr->key must be key
+
+					// Update previous node's pointer
+					prev->next = curr->next;
+
+					// Free space of current node
+					delete curr;
+
+				}
+
+			}
 
 		}
 
