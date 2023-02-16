@@ -17,7 +17,7 @@ namespace data_structures
 
 		Node* starts[N];
 
-		int hash(K_t key)
+		int hash(K_t key) const
 		{
 			return key % N;
 		}
@@ -56,7 +56,7 @@ namespace data_structures
 
 		}
 
-		V_t get_at(int index, K_t key)
+		V_t get_at(int index, K_t key) const
 		{
 
 			if (starts[index] == nullptr)
@@ -147,7 +147,7 @@ namespace data_structures
 
 		}
 
-		V_t get(K_t key)
+		V_t get(K_t key) const
 		{
 
 			int hash_v = hash(key);

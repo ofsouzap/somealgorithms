@@ -7,6 +7,7 @@ add_library (
 	"list_map.h"
 	"tree_map.h"
 	"chain_hash_map.h"
+	"open_addr_hash_map.h"
 )
 
 target_link_libraries ("data_structures" "mathutil")

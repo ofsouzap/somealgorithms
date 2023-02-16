@@ -19,5 +19,7 @@ namespace data_structures
 
 	class KeyDoesntExistException : public exception { };
 
+	class NoSpaceInHashTableException : public exception { };
+
 }
 

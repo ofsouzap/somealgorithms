@@ -39,3 +39,10 @@ add_test (
  	NAME "test_chain_hash_map"
  	COMMAND "test_chain_hash_map"
 )
+
+add_executable ("test_open_addr_hash_map" "test_open_addr_hash_map.cpp" )
+target_link_libraries ("test_open_addr_hash_map" "gtest_main" "data_structures")
+add_test (
+ 	NAME "test_open_addr_hash_map"
+ 	COMMAND "test_open_addr_hash_map"
+)
