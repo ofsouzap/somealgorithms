@@ -1,7 +1,3 @@
-- deletions from:
-	- BasicListMap
-	- ListMap
-	- TreeMap
 - red-black trees
 - hash table dictionary
 - priority queues:
