@@ -46,3 +46,10 @@ add_test (
  	NAME "test_open_addr_hash_map"
  	COMMAND "test_open_addr_hash_map"
 )
+
+add_executable ("test_heap_priority_queue" "test_heap_priority_queue.cpp" )
+target_link_libraries ("test_heap_priority_queue" "gtest_main" "data_structures")
+add_test (
+ 	NAME "test_heap_priority_queue"
+ 	COMMAND "test_heap_priority_queue"
+)

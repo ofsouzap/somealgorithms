@@ -21,5 +21,8 @@ namespace data_structures
 
 	class NoSpaceInHashTableException : public exception { };
 
+	class HeapIndexOutOfRangeException : public exception { };
+	class HeapFullException : public exception { };
+
 }
 
