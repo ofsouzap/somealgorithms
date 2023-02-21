@@ -10,8 +10,6 @@ using std::vector;
 namespace graphs
 {
 	/// @brief Graph data structure implementation using adjacency lists
-	/// @tparam N The total number of nodes in the graph
-	template <int N>
 	class ListGraph
 	{
 
@@ -20,7 +18,8 @@ namespace graphs
 
 	private:
 
-		vector<node_t> edges[N];
+		int N;
+		vector<node_t>* edges;
 
 		bool node_valid(node_t n) const
 		{
@@ -29,49 +28,17 @@ namespace graphs
 
 	public:
 
-		void add_edge(node_t a, node_t b)
-		{
+		ListGraph(int N);
 
-			if (!node_valid(a) || !node_valid(b))
-				throw InvalidNodeException();
+		~ListGraph();
 
-			if (is_connected(a, b))
-				return;
-			else
-				edges[a].push_back(b);
+		void add_edge(node_t a, node_t b);
 
-		}
+		void add_edge_undirected(node_t a, node_t b);
 
-		void add_edge_undirected(node_t a, node_t b)
-		{
+		bool is_connected(node_t a, node_t b) const;
 
-			if (!node_valid(a) || !node_valid(b))
-				throw InvalidNodeException();
-
-			add_edge(a, b);
-			add_edge(b, a);
-
-		}
-
-		bool is_connected(node_t a, node_t b) const
-		{
-
-			if (!node_valid(a) || !node_valid(b))
-				throw InvalidNodeException();
-
-			return std::find(edges[a].begin(), edges[a].end(), b) != edges[a].end();
-
-		}
-
-		const vector<node_t> neighbours(node_t n) const
-		{
-
-			if (!node_valid(n))
-				throw InvalidNodeException();
-
-			return edges[n];
-
-		}
+		const vector<node_t> neighbours(node_t n) const;
 
 	};
 }

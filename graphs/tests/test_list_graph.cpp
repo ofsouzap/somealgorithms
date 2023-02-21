@@ -32,16 +32,16 @@ void assert_vector_sets_eq(const vector<T> a, const vector<T> b)
 
 TEST(ListGraph, Init)
 {
-	auto g1 = ListGraph<1>();
-	auto g2 = ListGraph<3>();
-	auto g3 = ListGraph<20>();
-	auto g4 = ListGraph<100>();
+	auto g1 = ListGraph(1);
+	auto g2 = ListGraph(3);
+	auto g3 = ListGraph(20);
+	auto g4 = ListGraph(100);
 }
 
 TEST(ListGraph, AddEdges)
 {
 
-	auto g = ListGraph<5>();
+	auto g = ListGraph(5);
 
 	g.add_edge(0, 3);
 	g.add_edge(3, 4);
@@ -54,7 +54,7 @@ TEST(ListGraph, AddEdges)
 TEST(ListGraph, AddEdgesInvalid)
 {
 
-	auto g = ListGraph<5>();
+	auto g = ListGraph(5);
 
 	ASSERT_THROW(g.add_edge(5, 0), InvalidNodeException);
 	ASSERT_THROW(g.add_edge_undirected(3, 5), InvalidNodeException);
@@ -64,7 +64,7 @@ TEST(ListGraph, AddEdgesInvalid)
 TEST(ListGraph, IsConnected)
 {
 
-	auto g = ListGraph<5>();
+	auto g = ListGraph(5);
 
 	g.add_edge(0, 3);
 	g.add_edge(3, 4);
@@ -101,7 +101,7 @@ TEST(ListGraph, IsConnected)
 TEST(ListGraph, IsConnectedInvalid)
 {
 
-	auto g = ListGraph<5>();
+	auto g = ListGraph(5);
 
 	g.add_edge(0, 3);
 	g.add_edge(3, 4);
@@ -120,7 +120,7 @@ TEST(ListGraph, IsConnectedInvalid)
 TEST(ListGraph, Neighbours)
 {
 
-	auto g = ListGraph<5>();
+	auto g = ListGraph(5);
 
 	g.add_edge(0, 3);
 	g.add_edge(3, 4);
@@ -154,7 +154,7 @@ TEST(ListGraph, Neighbours)
 TEST(ListGraph, NeighboursInvalid)
 {
 
-	auto g = ListGraph<5>();
+	auto g = ListGraph(5);
 
 	g.add_edge(0, 3);
 	g.add_edge(3, 4);
