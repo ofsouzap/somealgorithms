@@ -24,9 +24,8 @@ namespace data_structures
 		};
 
 		Node heap[N];
-		/// <summary>
-		/// Next index to insert a value in
-		/// </summary>
+		
+		/// @brief Next index to insert a value in
 		int end_i;
 
 		static int iparent(int i)

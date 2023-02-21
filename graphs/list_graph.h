@@ -9,9 +9,8 @@ using std::vector;
 
 namespace graphs
 {
-	/// <summary>
-	/// Graph data_structure implementation using adjacency lists
-	/// </summary>
+	/// @brief Graph data structure implementation using adjacency lists
+	/// @tparam N The total number of nodes in the graph
 	template <int N>
 	class ListGraph
 	{

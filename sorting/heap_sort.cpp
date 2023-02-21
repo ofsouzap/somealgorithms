@@ -16,11 +16,9 @@ int heap_parent(int i)
 	return (i - 1) / 2;
 }
 
-/// <summary>
-/// Make it such that, in the heap with root node xs, the subtree with root node start satisfies the max-heap property.
-/// PRECONDITION: xs points to the first element of a contiguous array with N elements and the child subtrees are valid max-heaps
-/// POSTCONDITION: the subtree with root node start will satify the max-heap property
-/// </summary>
+/// @brief Make it such that, in the heap with root node xs, the subtree with root node start satisfies the max-heap property.
+/// PRECONDITION: xs points to the first element of a contiguous array with N elements and the child subtrees are valid max-heaps.
+/// POSTCONDITION: the subtree with root node start will satify the max-heap property.
 void sorting::heapify(int* xs, int start, int N)
 {
 
@@ -74,11 +72,9 @@ void sorting::heapify(int* xs, int start, int N)
 
 }
 
-/// <summary>
-/// Sorts an array of elements in-place using the heap sort algorithm.
-/// PRECONDITION: xs points to the first element of a contiguous array with N elements
-/// POSTCONDITION: xs will point to the first element of the now-sorted array with the exact same elements but probably reordered
-/// </summary>
+/// @brief Sorts an array of elements in-place using the heap sort algorithm.
+/// PRECONDITION: xs points to the first element of a contiguous array with N elements.
+/// POSTCONDITION: xs will point to the first element of the now-sorted array with the exact same elements but probably reordered.
 void sorting::heap_sort(int* xs, int N)
 {
 

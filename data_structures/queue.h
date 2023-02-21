@@ -5,10 +5,9 @@
 namespace data_structures
 {
 
+	/// @brief Implementation of fixed-maximum-size circular queue for data of generic type
+	/// @tparam T The type of the data in the queue
 	template <class T>
-	/// <summary>
-	/// Implementation of fixed-maximum-size circular queue for data of generic type
-	/// </summary>
 	class Queue
 	{
 
@@ -17,14 +16,10 @@ namespace data_structures
 		int size;
 		T* data;
 
-		/// <summary>
-		/// The next element to remove or negative if the queue is empty
-		/// </summary>
+		/// @brief The next element to remove or negative if the queue is empty
 		int head;
 
-		/// <summary>
-		/// The next empty space to use
-		/// </summary>
+		/// @brief The next empty space to use
 		int tail;
 
 		void head_forward()

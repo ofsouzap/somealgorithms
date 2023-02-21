@@ -1,10 +1,8 @@
 #include "sorting.h"
 
-/// <summary>
-/// Sorts an array of elements using the merge sort algorithm. A sorted *copy* of the array is returned
-/// PRECONDITION: xs points to the first element of a contiguous array with N elements
-/// POSTCONDITION: the returned pointer will point to the first element of the now-sorted array with the exact same elements but probably reordered
-/// </summary>
+/// @brief Sorts an array of elements using the merge sort algorithm. A sorted *copy* of the array is returned.
+/// PRECONDITION: xs points to the first element of a contiguous array with N elements.
+/// POSTCONDITION: the returned pointer will point to the first element of the now-sorted array with the exact same elements but probably reordered.
 int* sorting::merge_sort(int* xs, int N)
 {
 

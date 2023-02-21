@@ -1,10 +1,8 @@
 #include "sorting.h"
 
-/// <summary>
-/// Sorts an array of elements in-place using the select sort algorithm.
-/// PRECONDITION: xs points to the first element of a contiguous array with N elements
-/// POSTCONDITION: xs will point to the first element of the now-sorted array with the exact same elements but probably reordered
-/// </summary>
+/// @brief Sorts an array of elements in-place using the select sort algorithm.
+/// PRECONDITION: xs points to the first element of a contiguous array with N elements.
+/// POSTCONDITION: xs will point to the first element of the now-sorted array with the exact same elements but probably reordered.
 void sorting::select_sort(int* xs, int N)
 {
 

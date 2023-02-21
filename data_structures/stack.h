@@ -13,9 +13,7 @@ namespace data_structures
 
         int size;
         T* data;
-        /// <summary>
-        /// Index of next free space
-        /// </summary>
+        /// @brief Index of next free space
         int top;
 
     public:
