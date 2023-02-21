@@ -143,11 +143,11 @@ TEST(ListGraph, Neighbours)
 	vector<int> ns4;
 	ns4.push_back(2);
 
-	assert_vector_sets_eq<int>(g.neighbours(0), ns0);
-	assert_vector_sets_eq<int>(g.neighbours(1), ns1);
-	assert_vector_sets_eq<int>(g.neighbours(2), ns2);
-	assert_vector_sets_eq<int>(g.neighbours(3), ns3);
-	assert_vector_sets_eq<int>(g.neighbours(4), ns4);
+	assert_vector_sets_eq(g.neighbours(0), ns0);
+	assert_vector_sets_eq(g.neighbours(1), ns1);
+	assert_vector_sets_eq(g.neighbours(2), ns2);
+	assert_vector_sets_eq(g.neighbours(3), ns3);
+	assert_vector_sets_eq(g.neighbours(4), ns4);
 
 }
 
