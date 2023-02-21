@@ -19,7 +19,7 @@ void assert_vector_sets_eq(const vector<T> a, const vector<T> b)
 
 		T x = b[i];
 
-		auto found = std::find(remaining.begin(), remaining.end(), x);
+		auto found = std::find<vector<T>::const_iterator, T>(remaining.begin(), remaining.end(), x);
 
 		ASSERT_NE(found, remaining.end()); // Check value was found
 
