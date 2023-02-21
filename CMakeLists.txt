@@ -16,9 +16,11 @@ include_directories ("mathutil")
 include_directories ("sorting")
 include_directories ("general_algorithms")
 include_directories ("data_structures")
+include_directories ("graphs")
 
 # Include sub-directories
 add_subdirectory ("mathutil")
 add_subdirectory ("sorting")
 add_subdirectory ("general_algorithms")
 add_subdirectory ("data_structures")
+add_subdirectory ("graphs")

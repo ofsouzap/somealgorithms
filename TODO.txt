@@ -1,4 +1,9 @@
 - red-black trees
 - priority queues:
-	- heap implementation
 	- binomial heap implementation
+- use map data structures created for list graph implementation
+- graph algorithms:
+	- DFS
+	- BFS
+	- Dijkstra
+- switch to Doxygen documentation comments instead of XML
