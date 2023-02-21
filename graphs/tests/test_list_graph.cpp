@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include <algorithm>
 #include "list_graph.h"
 #include "exceptions.h"
 
