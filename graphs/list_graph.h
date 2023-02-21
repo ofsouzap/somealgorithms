@@ -59,7 +59,7 @@ namespace graphs
 			if (!node_valid(a) || !node_valid(b))
 				throw InvalidNodeException();
 
-			return std::find<vector<node_t>::const_iterator, node_t>(edges[a].begin(), edges[a].end(), b) != edges[a].end();
+			return std::find<vector<node_t>::const_iterator>(edges[a].begin(), edges[a].end(), b) != edges[a].end();
 
 		}
 
