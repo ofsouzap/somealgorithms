@@ -1,9 +1,7 @@
+- stop using template sizes for data structures: too problematic
 - red-black trees
 - priority queues:
 	- binomial heap implementation
 - use map data structures created for list graph implementation
 - graph algorithms:
-	- DFS
-	- BFS
 	- Dijkstra
-- switch to Doxygen documentation comments instead of XML

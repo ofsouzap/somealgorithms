@@ -7,9 +7,28 @@ graphs::ListGraph::ListGraph(int N) : N(N)
 	edges = new vector<node_t>[N];
 }
 
+graphs::ListGraph::ListGraph(const ListGraph& other)
+{
+
+	N = other.N;
+
+	edges = new vector<node_t>[N];
+
+	// Copy edges
+	for (int i = 0; i < N; i++)
+		for (node_t x : other.edges[i])
+			edges[i].push_back(x);
+
+}
+
 graphs::ListGraph::~ListGraph()
 {
 	delete[] edges;
+}
+
+int graphs::ListGraph::get_size() const
+{
+	return N;
 }
 
 void graphs::ListGraph::add_edge(node_t a, node_t b)

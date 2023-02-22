@@ -30,7 +30,11 @@ namespace graphs
 
 		ListGraph(int N);
 
+		ListGraph(const ListGraph& other);
+
 		~ListGraph();
+
+		int get_size() const;
 
 		void add_edge(node_t a, node_t b);
 
