@@ -4,7 +4,7 @@
 
 namespace data_structures
 {
-    template <class V_t, int N>
+    template <class V_t>
 	class OpenAddrHashMap
 	{
 
@@ -17,12 +17,15 @@ namespace data_structures
 
 		typedef int K_t;
 
-		struct
-        {
-            bool is_set;
-            K_t key;
-            V_t value;
-        } table[N];
+		struct Entry
+		{
+			bool is_set;
+			K_t key;
+			V_t value;
+		};
+		
+		int N;
+		Entry* table;
 
 		int hash(K_t key) const
 		{
@@ -104,8 +107,10 @@ namespace data_structures
 
 	public:
 
-		OpenAddrHashMap(V_t default_value)
+		OpenAddrHashMap(int N, V_t default_value) : N(N)
 		{
+
+			table = new Entry[N];
 
 			for (int i = 0; i < N; i++)
 				table[i] = { false, 0, default_value };

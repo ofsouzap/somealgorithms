@@ -5,7 +5,7 @@
 namespace data_structures
 {
 
-	template <class V_t, int N>
+	template <class V_t>
 	class ChainHashMap
 	{
 
@@ -15,7 +15,8 @@ namespace data_structures
 
 		struct Node;
 
-		Node* starts[N];
+		int N;
+		Node** starts;
 
 		int hash(K_t key) const
 		{
@@ -130,8 +131,10 @@ namespace data_structures
 
 	public:
 
-		ChainHashMap()
+		ChainHashMap(int N) : N(N)
 		{
+
+			starts = new Node* [N];
 
 			for (int i = 0; i < N; i++)
 				starts[i] = nullptr;
@@ -167,8 +170,8 @@ namespace data_structures
 
 	};
 
-	template <class V_t, int N>
-	struct ChainHashMap<V_t, N>::Node
+	template <class V_t>
+	struct ChainHashMap<V_t>::Node
 	{
 
 		K_t key;

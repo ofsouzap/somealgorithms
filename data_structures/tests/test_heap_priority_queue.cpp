@@ -7,13 +7,13 @@ using namespace data_structures;
 
 TEST(HeapPriorityQueue, Init)
 {
-	HeapPriorityQueue<string, 5> q{};
+	HeapPriorityQueue<string> q(5);
 }
 
 TEST(HeapPriorityQueue, EnqueueSmall)
 {
 
-	HeapPriorityQueue<string, 5> q{};
+	HeapPriorityQueue<string> q(5);
 
 	q.enqueue( 0, "task a" );
 	q.enqueue( 1, "task d" );
@@ -25,7 +25,7 @@ TEST(HeapPriorityQueue, EnqueueSmall)
 TEST(HeapPriorityQueue, EnqueueLarge)
 {
 
-	HeapPriorityQueue<string, 200> q{};
+	HeapPriorityQueue<string> q(200);
 
 	for (int i = 0; i < 100; i++)
 	{
@@ -37,7 +37,7 @@ TEST(HeapPriorityQueue, EnqueueLarge)
 TEST(HeapPriorityQueue, EnqueueFillExactly)
 {
 
-	HeapPriorityQueue<string, 100> q{};
+	HeapPriorityQueue<string> q(100);
 
 	for (int i = 0; i < 100; i++)
 	{
@@ -49,7 +49,7 @@ TEST(HeapPriorityQueue, EnqueueFillExactly)
 TEST(HeapPriorityQueue, EnqueueOverfill)
 {
 
-	HeapPriorityQueue<string, 100> q{};
+	HeapPriorityQueue<string> q(100);
 
 	for (int i = 0; i < 100; i++)
 	{
@@ -63,7 +63,7 @@ TEST(HeapPriorityQueue, EnqueueOverfill)
 TEST(HeapPriorityQueue, EnqueueDequeueOverfill)
 {
 
-	HeapPriorityQueue<string, 100> q{};
+	HeapPriorityQueue<string> q(100);
 
 	/* +20 */ for (int i = 0; i < 20; i++) q.enqueue(0, "task");
 	/* -10 */ for (int i = 0; i < 10; i++) q.dequeue();
@@ -78,7 +78,7 @@ TEST(HeapPriorityQueue, EnqueueDequeueOverfill)
 TEST(HeapPriorityQueue, DequeueAllSame)
 {
 
-	HeapPriorityQueue<string, 200> q{};
+	HeapPriorityQueue<string> q(200);
 
 	for (int i = 0; i < 100; i++)
 	{
@@ -96,7 +96,7 @@ TEST(HeapPriorityQueue, DequeueAllSame)
 TEST(HeapPriorityQueue, DequeueAlreadyOrdered)
 {
 
-	HeapPriorityQueue<int, 200> q{};
+	HeapPriorityQueue<int> q(200);
 
 	for (int i = 0; i < 100; i++)
 	{
@@ -114,7 +114,7 @@ TEST(HeapPriorityQueue, DequeueAlreadyOrdered)
 TEST(HeapPriorityQueue, DequeueReverseOrdered)
 {
 
-	HeapPriorityQueue<int, 200> q{};
+	HeapPriorityQueue<int> q(200);
 
 	for (int i = 99; i >= 0; i--)
 	{
@@ -132,7 +132,7 @@ TEST(HeapPriorityQueue, DequeueReverseOrdered)
 TEST(HeapPriorityQueue, DequeueAnyOrder)
 {
 
-	HeapPriorityQueue<int, 50> q{};
+	HeapPriorityQueue<int> q(50);
 
 	q.enqueue(4, 4);
 	q.enqueue(7, 7);

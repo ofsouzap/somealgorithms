@@ -1,4 +1,3 @@
-- stop using template sizes for data structures: too problematic
 - red-black trees
 - priority queues:
 	- binomial heap implementation

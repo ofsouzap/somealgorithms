@@ -7,13 +7,13 @@ using namespace data_structures;
 
 TEST(OpenAddrHashMap, Init)
 {
-	OpenAddrHashMap<string, 10> map{""};
+	OpenAddrHashMap<string> map(10, "");
 }
 
 TEST(OpenAddrHashMap, Adding)
 {
 
-	OpenAddrHashMap<string, 10> map{""};
+	OpenAddrHashMap<string> map(10, "");
 
 	map.set(0, "zero");
 	map.set(1, "one");
@@ -30,7 +30,7 @@ TEST(OpenAddrHashMap, Adding)
 TEST(OpenAddrHashMap, AddingFull)
 {
 
-	OpenAddrHashMap<string, 5> map{""};
+	OpenAddrHashMap<string> map(5, "");
 
 	map.set(0, "zero");
 	map.set(1, "one");
@@ -44,7 +44,7 @@ TEST(OpenAddrHashMap, AddingFull)
 TEST(OpenAddrHashMap, Replacing)
 {
 
-	OpenAddrHashMap<string, 10> map{""};
+	OpenAddrHashMap<string> map(10, "");
 
 	map.set(0, "zero");
 	map.set(1, "one");
@@ -61,7 +61,7 @@ TEST(OpenAddrHashMap, Replacing)
 TEST(OpenAddrHashMap, GettingSingle)
 {
 
-	OpenAddrHashMap<string, 10> map{""};
+	OpenAddrHashMap<string> map(10, "");
 
 	map.set(0, "zero");
 	ASSERT_EQ(map.get(0), "zero");
@@ -71,7 +71,7 @@ TEST(OpenAddrHashMap, GettingSingle)
 TEST(OpenAddrHashMap, GettingAdded)
 {
 
-	OpenAddrHashMap<string, 10> map{""};
+	OpenAddrHashMap<string> map(10, "");
 
 	map.set(0, "zero");
 	map.set(1, "one");
@@ -98,7 +98,7 @@ TEST(OpenAddrHashMap, GettingAdded)
 TEST(OpenAddrHashMap, GettingReplaced)
 {
 
-	OpenAddrHashMap<string, 10> map{""};
+	OpenAddrHashMap<string> map(10, "");
 
 	map.set(0, "zero");
 	map.set(1, "one");
@@ -121,7 +121,7 @@ TEST(OpenAddrHashMap, GettingReplaced)
 TEST(OpenAddrHashMap, GettingNonExistantEmpty)
 {
 
-	OpenAddrHashMap<string, 10> map{""};
+	OpenAddrHashMap<string> map(10, "");
 
 	ASSERT_THROW(map.get(0), KeyDoesntExistException);
 
@@ -130,7 +130,7 @@ TEST(OpenAddrHashMap, GettingNonExistantEmpty)
 TEST(OpenAddrHashMap, GettingNonExistant)
 {
 
-	OpenAddrHashMap<string, 10> map{""};
+	OpenAddrHashMap<string> map(10, "");
 
 	map.set(0, "zero");
 	map.set(1, "one");

@@ -9,7 +9,7 @@ using mathutil::log2_ceil;
 namespace data_structures
 {
 
-	template <class V_t, int N>
+	template <class V_t>
 	class HeapPriorityQueue
 	{
 
@@ -23,7 +23,8 @@ namespace data_structures
 			V_t value;
 		};
 
-		Node heap[N];
+		int N;
+		Node* heap;
 		
 		/// @brief Next index to insert a value in
 		int end_i;
@@ -191,10 +192,12 @@ namespace data_structures
 
 	public:
 
-		HeapPriorityQueue()
+		HeapPriorityQueue(int N) : N(N)
 		{
 
 			end_i = 0;
+
+			heap = new Node[N];
 
 		}
 

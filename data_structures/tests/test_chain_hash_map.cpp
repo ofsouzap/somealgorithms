@@ -7,13 +7,13 @@ using namespace data_structures;
 
 TEST(ChainHashMap, Init)
 {
-	ChainHashMap<string, 5> map{};
+	ChainHashMap<string> map(5);
 }
 
 TEST(ChainHashMap, Adding)
 {
 
-	ChainHashMap<string, 5> map{};
+	ChainHashMap<string> map(5);
 
 	map.set(0, "zero");
 	map.set(1, "one");
@@ -30,7 +30,7 @@ TEST(ChainHashMap, Adding)
 TEST(ChainHashMap, Replacing)
 {
 
-	ChainHashMap<string, 5> map{};
+	ChainHashMap<string> map(5);
 
 	map.set(0, "zero");
 	map.set(1, "one");
@@ -47,7 +47,7 @@ TEST(ChainHashMap, Replacing)
 TEST(ChainHashMap, GettingSingle)
 {
 
-	ChainHashMap<string, 5> map{};
+	ChainHashMap<string> map(5);
 
 	map.set(0, "zero");
 	ASSERT_EQ(map.get(0), "zero");
@@ -57,7 +57,7 @@ TEST(ChainHashMap, GettingSingle)
 TEST(ChainHashMap, GettingAdded)
 {
 
-	ChainHashMap<string, 5> map{};
+	ChainHashMap<string> map(5);
 
 	map.set(0, "zero");
 	map.set(1, "one");
@@ -84,7 +84,7 @@ TEST(ChainHashMap, GettingAdded)
 TEST(ChainHashMap, GettingReplaced)
 {
 
-	ChainHashMap<string, 5> map{};
+	ChainHashMap<string> map(5);
 
 	map.set(0, "zero");
 	map.set(1, "one");
@@ -107,7 +107,7 @@ TEST(ChainHashMap, GettingReplaced)
 TEST(ChainHashMap, GettingNonExistantEmpty)
 {
 
-	ChainHashMap<string, 5> map{};
+	ChainHashMap<string> map(5);
 
 	ASSERT_THROW(map.get(0), KeyDoesntExistException);
 
@@ -116,7 +116,7 @@ TEST(ChainHashMap, GettingNonExistantEmpty)
 TEST(ChainHashMap, GettingNonExistant)
 {
 
-	ChainHashMap<string, 5> map{};
+	ChainHashMap<string> map(5);
 
 	map.set(0, "zero");
 	map.set(1, "one");
@@ -135,7 +135,7 @@ TEST(ChainHashMap, GettingNonExistant)
 TEST(ChainHashMap, DeleteStartFilled)
 {
 
-	ChainHashMap<string, 5> map{};
+	ChainHashMap<string> map(5);
 
 	map.set(0, "zero");
 	map.set(1, "one");
@@ -174,7 +174,7 @@ TEST(ChainHashMap, DeleteStartFilled)
 TEST(ChainHashMap, DeleteStartOnlyElement)
 {
 
-	ChainHashMap<string, 5> map{};
+	ChainHashMap<string> map(5);
 
 	map.set(0, "zero");
 
@@ -189,7 +189,7 @@ TEST(ChainHashMap, DeleteStartOnlyElement)
 TEST(ChainHashMap, DeleteInside)
 {
 
-	ChainHashMap<string, 5> map{};
+	ChainHashMap<string> map(5);
 
 	map.set(0, "zero");
 	map.set(1, "one");
@@ -228,7 +228,7 @@ TEST(ChainHashMap, DeleteInside)
 TEST(ChainHashMap, DeleteEnd)
 {
 
-	ChainHashMap<string, 5> map{};
+	ChainHashMap<string> map(5);
 
 	map.set(0, "zero");
 	map.set(1, "one");
@@ -267,7 +267,7 @@ TEST(ChainHashMap, DeleteEnd)
 TEST(ChainHashMap, DeleteNonExistant)
 {
 
-	ChainHashMap<string, 5> map{};
+	ChainHashMap<string> map(5);
 
 	map.set(0, "zero");
 	map.set(1, "one");
