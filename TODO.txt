@@ -1,6 +1,11 @@
 - red-black trees
 - priority queues:
 	- binomial heap implementation
-- use map data structures created for list graph implementation
+- use set data structures created for list graph implementation
 - graph algorithms:
 	- Dijkstra
+	- Bellman-Ford
+	- Johnson's
+	- Ford-Fulkerson
+	- Prim's
+	- Kruskal's

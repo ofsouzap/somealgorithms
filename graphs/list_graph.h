@@ -1,48 +1,51 @@
 #pragma once
 
-#include <vector>
-#include <algorithm>
-
-#include "exceptions.h"
-
-using std::vector;
+#include "list_weighted_graph.h"
 
 namespace graphs
 {
-	/// @brief Graph data structure implementation using adjacency lists
-	class ListGraph
+	/// @brief Unweighted graph data structure implementation using adjacency lists
+	class ListGraph : protected ListWeightedGraph
 	{
 
+		// N.B. this is just a weighted graph with all the weights set to 1
+
 	public:
-		typedef int node_t;
 
-	private:
+		typedef ListWeightedGraph::node_t node_t;
 
-		int N;
-		vector<node_t>* edges;
-
-		bool node_valid(node_t n) const
+		ListGraph(int N) : ListWeightedGraph(N)
 		{
-			return n >= 0 && n < N;
 		}
 
-	public:
+		ListGraph(const ListGraph& other) : ListWeightedGraph(other)
+		{
+		}
 
-		ListGraph(int N);
+		int get_size() const
+		{
+			return ListWeightedGraph::get_size();
+		}
 
-		ListGraph(const ListGraph& other);
+		void add_edge(node_t a, node_t b)
+		{
+			ListWeightedGraph::add_edge(a, b, 1);
+		}
 
-		~ListGraph();
+		void add_edge_undirected(node_t a, node_t b)
+		{
+			ListWeightedGraph::add_edge_undirected(a, b, 1);
+		}
 
-		int get_size() const;
+		bool is_connected(node_t a, node_t b) const
+		{
+			return ListWeightedGraph::is_connected(a, b);
+		}
 
-		void add_edge(node_t a, node_t b);
-
-		void add_edge_undirected(node_t a, node_t b);
-
-		bool is_connected(node_t a, node_t b) const;
-
-		const vector<node_t> neighbours(node_t n) const;
+		const vector<node_t> neighbours(node_t n) const
+		{
+			return ListWeightedGraph::neighbours(n);
+		}
 
 	};
 }

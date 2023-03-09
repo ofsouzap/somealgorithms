@@ -8,5 +8,6 @@ namespace graphs
 {
 
 	class InvalidNodeException : public exception { };
+	class NoEdgeFoundException : public exception { };
 
 }

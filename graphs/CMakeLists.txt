@@ -1,6 +1,7 @@
 add_library (
 	"graphs"
-	"list_graph.h" "list_graph.cpp"
+	"list_weighted_graph.h" "list_weighted_graph.cpp"
+	"list_graph.h"
 	"graph_algorithms.h"
 )
 
