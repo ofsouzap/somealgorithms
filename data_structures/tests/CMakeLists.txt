@@ -33,6 +33,13 @@ add_test (
  	COMMAND "test_tree_map"
 )
 
+add_executable ("test_tree_set" "test_tree_set.cpp" )
+target_link_libraries ("test_tree_set" "gtest_main" "data_structures")
+add_test (
+ 	NAME "test_tree_set"
+ 	COMMAND "test_tree_set"
+)
+
 add_executable ("test_chain_hash_map" "test_chain_hash_map.cpp" )
 target_link_libraries ("test_chain_hash_map" "gtest_main" "data_structures")
 add_test (

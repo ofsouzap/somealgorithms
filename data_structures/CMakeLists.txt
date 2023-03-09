@@ -7,6 +7,7 @@ add_library (
 	"basic_list_map.h"
 	"list_map.h"
 	"tree_map.h"
+	"tree_set.h"
 	"chain_hash_map.h"
 	"open_addr_hash_map.h"
 	"heap_priority_queue.h"

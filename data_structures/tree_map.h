@@ -125,7 +125,7 @@ namespace data_structures
 				}
 			}
 
-			throw KeyDoesntExistException();
+			return nullptr;
 
 		}
 
@@ -187,15 +187,31 @@ namespace data_structures
 
 		}
 
+		bool contains_key(K_t key) const
+		{
+			return get_node(key) != nullptr;
+		}
+
 		V_t get(const K_t key) const
 		{
-			return get_node(key)->value;
+
+			Node* res = get_node(key);
+
+			if (res != nullptr)
+				return res->value;
+			else
+				throw KeyDoesntExistException();
+
 		}
 
 		void remove(const K_t key)
 		{
 
 			Node* node = get_node(key);
+
+			if (node == nullptr)
+				throw KeyDoesntExistException();
+
 			Node* n_succ = child_succ(node);
 
 			if (node->is_leaf())

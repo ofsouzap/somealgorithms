@@ -51,6 +51,7 @@ TEST(TreeMap, GettingSingle)
 
 	map.set(0, "zero");
 	ASSERT_EQ(map.get(0), "zero");
+	ASSERT_TRUE(map.contains_key(0));
 
 }
 
@@ -79,6 +80,16 @@ TEST(TreeMap, GettingAdded)
 	ASSERT_EQ(map.get(7), "seven");
 	ASSERT_EQ(map.get(8), "eight");
 
+	ASSERT_TRUE(map.contains_key(0));
+	ASSERT_TRUE(map.contains_key(1));
+	ASSERT_TRUE(map.contains_key(2));
+	ASSERT_TRUE(map.contains_key(3));
+	ASSERT_TRUE(map.contains_key(4));
+	ASSERT_TRUE(map.contains_key(5));
+	ASSERT_TRUE(map.contains_key(6));
+	ASSERT_TRUE(map.contains_key(7));
+	ASSERT_TRUE(map.contains_key(8));
+
 }
 
 TEST(TreeMap, GettingReplaced)
@@ -102,6 +113,12 @@ TEST(TreeMap, GettingReplaced)
 	ASSERT_EQ(map.get(3), "three");
 	ASSERT_EQ(map.get(2), "twoagain");
 
+	ASSERT_TRUE(map.contains_key(0));
+	ASSERT_TRUE(map.contains_key(1));
+	ASSERT_TRUE(map.contains_key(2));
+	ASSERT_TRUE(map.contains_key(3));
+	ASSERT_TRUE(map.contains_key(4));
+
 }
 
 TEST(TreeMap, GettingNonExistantEmpty)
@@ -110,6 +127,7 @@ TEST(TreeMap, GettingNonExistantEmpty)
 	TreeMap<string> map{};
 
 	ASSERT_THROW(map.get(0), KeyDoesntExistException);
+	ASSERT_FALSE(map.contains_key(0));
 
 }
 
@@ -129,6 +147,7 @@ TEST(TreeMap, GettingNonExistant)
 	map.set(2, "twoagain");
 
 	ASSERT_THROW(map.get(9), KeyDoesntExistException);
+	ASSERT_FALSE(map.contains_key(9));
 
 }
 
@@ -169,6 +188,16 @@ TEST(TreeMap, DeleteStartFilled)
 	ASSERT_EQ(map.get(7), "seven");
 	ASSERT_EQ(map.get(8), "eight");
 
+	ASSERT_TRUE(map.contains_key(0));
+	ASSERT_TRUE(map.contains_key(1));
+	ASSERT_TRUE(map.contains_key(2));
+	ASSERT_TRUE(map.contains_key(3));
+	ASSERT_TRUE(map.contains_key(4));
+	ASSERT_FALSE(map.contains_key(5));
+	ASSERT_TRUE(map.contains_key(6));
+	ASSERT_TRUE(map.contains_key(7));
+	ASSERT_TRUE(map.contains_key(8));
+
 }
 
 TEST(TreeMap, DeleteStartOnlyElement)
@@ -183,6 +212,7 @@ TEST(TreeMap, DeleteStartOnlyElement)
 	map.remove(0);
 
 	ASSERT_THROW(map.get(0), KeyDoesntExistException);
+	ASSERT_FALSE(map.contains_key(0));
 
 }
 
@@ -223,6 +253,16 @@ TEST(TreeMap, DeleteLeaf)
 	ASSERT_EQ(map.get(7), "seven");
 	ASSERT_EQ(map.get(8), "eight");
 
+	ASSERT_TRUE(map.contains_key(0));
+	ASSERT_TRUE(map.contains_key(1));
+	ASSERT_TRUE(map.contains_key(2));
+	ASSERT_FALSE(map.contains_key(3));
+	ASSERT_TRUE(map.contains_key(4));
+	ASSERT_TRUE(map.contains_key(5));
+	ASSERT_TRUE(map.contains_key(6));
+	ASSERT_TRUE(map.contains_key(7));
+	ASSERT_TRUE(map.contains_key(8));
+
 }
 
 TEST(TreeMap, DeleteInside)
@@ -261,6 +301,16 @@ TEST(TreeMap, DeleteInside)
 	ASSERT_EQ(map.get(6), "six");
 	ASSERT_EQ(map.get(7), "seven");
 	ASSERT_EQ(map.get(8), "eight");
+
+	ASSERT_TRUE(map.contains_key(0));
+	ASSERT_TRUE(map.contains_key(1));
+	ASSERT_FALSE(map.contains_key(2));
+	ASSERT_TRUE(map.contains_key(3));
+	ASSERT_TRUE(map.contains_key(4));
+	ASSERT_TRUE(map.contains_key(5));
+	ASSERT_TRUE(map.contains_key(6));
+	ASSERT_TRUE(map.contains_key(7));
+	ASSERT_TRUE(map.contains_key(8));
 
 }
 
@@ -301,6 +351,16 @@ TEST(TreeMap, DeleteEnd)
 	ASSERT_EQ(map.get(7), "seven");
 	ASSERT_THROW(map.get(8), KeyDoesntExistException);
 
+	ASSERT_TRUE(map.contains_key(0));
+	ASSERT_TRUE(map.contains_key(1));
+	ASSERT_TRUE(map.contains_key(2));
+	ASSERT_TRUE(map.contains_key(3));
+	ASSERT_TRUE(map.contains_key(4));
+	ASSERT_TRUE(map.contains_key(5));
+	ASSERT_TRUE(map.contains_key(6));
+	ASSERT_TRUE(map.contains_key(7));
+	ASSERT_FALSE(map.contains_key(8));
+
 }
 
 TEST(TreeMap, DeleteNonExistant)
@@ -339,6 +399,16 @@ TEST(TreeMap, DeleteNonExistant)
 	ASSERT_EQ(map.get(6), "six");
 	ASSERT_EQ(map.get(7), "seven");
 	ASSERT_EQ(map.get(8), "eight");
+
+	ASSERT_TRUE(map.contains_key(0));
+	ASSERT_TRUE(map.contains_key(1));
+	ASSERT_TRUE(map.contains_key(2));
+	ASSERT_TRUE(map.contains_key(3));
+	ASSERT_TRUE(map.contains_key(4));
+	ASSERT_TRUE(map.contains_key(5));
+	ASSERT_TRUE(map.contains_key(6));
+	ASSERT_TRUE(map.contains_key(7));
+	ASSERT_TRUE(map.contains_key(8));
 
 }
 
@@ -379,6 +449,16 @@ TEST(TreeMap, DeleteNoSuccessorRoot)
 	ASSERT_EQ(map.get(7), "seven");
 	ASSERT_THROW(map.get(8), KeyDoesntExistException);
 
+	ASSERT_TRUE(map.contains_key(0));
+	ASSERT_TRUE(map.contains_key(1));
+	ASSERT_TRUE(map.contains_key(2));
+	ASSERT_TRUE(map.contains_key(3));
+	ASSERT_TRUE(map.contains_key(4));
+	ASSERT_TRUE(map.contains_key(5));
+	ASSERT_TRUE(map.contains_key(6));
+	ASSERT_TRUE(map.contains_key(7));
+	ASSERT_FALSE(map.contains_key(8));
+
 }
 
 TEST(TreeMap, DeleteNoSuccessorInside)
@@ -417,5 +497,15 @@ TEST(TreeMap, DeleteNoSuccessorInside)
 	ASSERT_EQ(map.get(6), "six");
 	ASSERT_EQ(map.get(7), "seven");
 	ASSERT_THROW(map.get(8), KeyDoesntExistException);
+
+	ASSERT_TRUE(map.contains_key(0));
+	ASSERT_TRUE(map.contains_key(1));
+	ASSERT_TRUE(map.contains_key(2));
+	ASSERT_TRUE(map.contains_key(3));
+	ASSERT_TRUE(map.contains_key(4));
+	ASSERT_TRUE(map.contains_key(5));
+	ASSERT_TRUE(map.contains_key(6));
+	ASSERT_TRUE(map.contains_key(7));
+	ASSERT_FALSE(map.contains_key(8));
 
 }
